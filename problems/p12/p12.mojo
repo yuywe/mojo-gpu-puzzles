@@ -51,15 +51,13 @@ def dot_product[
     barrier()
     var stride = block_dim.x // 2
     while stride > 0:
-        if local_i < stride
+        if local_i < stride:
             shared[local_i] += shared[local_i + stride]
         barrier()
         stride //= 2
 
     if local_i == 0:
         output[0] = shared[0]
-
-
 
 # ANCHOR_END: dot_product
 
