@@ -29,7 +29,7 @@ def add_10(
     a: Pointer[Scalar[dtype], MutAnyOrigin],
 ):
     var i = thread_idx.x
-    # FILL ME IN (roughly 1 line)
+    output[unsafe_offset=i] = a[unsafe_offset=i] + Scalar[dtype](10)
 
 
 # ANCHOR_END: add_10

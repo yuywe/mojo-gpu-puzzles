@@ -59,7 +59,8 @@ def add_10_shared_tile_tensor[
     # threads need to coordinate access to shared data.
     barrier()
 
-    # FILL ME IN (roughly 2 lines)
+    if global_i < size:
+        output[global_i] = shared[local_i] + Scalar[dtype](10)
 
 
 # ANCHOR_END: add_10_shared
